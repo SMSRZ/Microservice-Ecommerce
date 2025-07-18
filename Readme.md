@@ -1,7 +1,7 @@
 Spring Boot Microservice Appliaction
 
 Architecture
-docs/bookstore-spring-microservices.png
+C:\Users\Ali\IdeaProjects\Microservice-Ecommerce\docs\bookstore-spring-microservices.png
 Modules
 catalog-service: This services provides REST API for managing catalog of products(books).
 
