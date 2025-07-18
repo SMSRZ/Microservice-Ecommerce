@@ -1,5 +1,3 @@
-Spring Boot Microservice Appliaction
-
 
 
 # 📚 Bookstore Microservices Application
