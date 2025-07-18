@@ -1,14 +1,14 @@
 Spring Boot Microservice Appliaction
 
-Architecture
-![alt text](bookstore-spring-microservices.png)
 
-📚 Bookstore Microservices Application
-This project is a microservices-based bookstore application, designed as a learning project inspired by the Microservices Project Series on YouTube.
 
 # 📚 Bookstore Microservices Application
 
 This project is a microservices-based **bookstore application**, designed as a learning project inspired by the [Microservices Project Series on YouTube](https://www.youtube.com/playlist?list=PLuNxlOYbv61g_ytin-wgkecfWDKVCEDmB).
+
+
+
+![alt text](bookstore-spring-microservices.png)
 
 ---
 
