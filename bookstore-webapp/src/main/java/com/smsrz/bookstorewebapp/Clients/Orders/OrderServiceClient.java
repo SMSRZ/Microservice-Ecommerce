@@ -13,11 +13,11 @@ import java.util.Map;
 public interface OrderServiceClient {
 
     @GetExchange("orders/api/orders")
-    List<OrderSummary> getOrders();
+    List<OrderSummary> getOrders(@RequestHeader Map<String, ?> headers);
 
     @PostExchange("orders/api/orders")
-    OrderConfirmationDTO createOrder(@RequestBody CreateOrderRequest orderRequest);
+    OrderConfirmationDTO createOrder(@RequestHeader Map<String, ?> headers,@RequestBody CreateOrderRequest orderRequest);
 
     @GetExchange("/orders/api/orders/{orderNumber}")
-    OrderDTO getOrder(@PathVariable String orderNumber);
+    OrderDTO getOrder(@RequestHeader Map<String, ?> headers,@PathVariable String orderNumber);
 }
