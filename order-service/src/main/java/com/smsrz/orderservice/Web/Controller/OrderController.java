@@ -8,6 +8,7 @@ import com.smsrz.orderservice.domain.Models.CreateOrderResponse;
 import com.smsrz.orderservice.domain.Models.OrderDTO;
 import com.smsrz.orderservice.domain.Models.OrderSummary;
 import com.smsrz.orderservice.domain.OrderService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.jaxb.SpringDataJaxb;
@@ -19,6 +20,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/api/orders")
+@SecurityRequirement(name="security_auth")
 public class OrderController {
     private final OrderService orderService;
     private final SecurityService securityService;
