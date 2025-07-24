@@ -10,13 +10,15 @@ import org.springframework.web.client.RestClient;
 
 import java.time.Duration;
 
+
 @Configuration
 public class CatalogServiceConfig {
 
     @Bean
-    RestClient restClient(ApplicationProperties applicationProperties) {
+    RestClient restClient(RestClient.Builder builder,
+            ApplicationProperties applicationProperties) {
 
-        return RestClient.builder()
+        return builder
 
                 .baseUrl(applicationProperties.catalogServiceUrl())
                 .requestFactory(ClientHttpRequestFactories.get(
