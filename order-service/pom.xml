@@ -27,8 +27,9 @@
         <url/>
     </scm>
     <properties>
-        <java.version>21</java.version>
+        <java.version>20</java.version>
         <springdoc-openapi.version>2.8.8</springdoc-openapi.version>
+        <dockerImageName>smsrz/bookstore-${project.artifactId}</dockerImageName>
     </properties>
     <dependencies>
         <dependency>
@@ -58,6 +59,19 @@
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-database-postgresql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-otel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-exporter-zipkin</artifactId>
         </dependency>
         <dependency>
             <groupId>io.github.resilience4j</groupId>
@@ -93,11 +107,7 @@
             <artifactId>shedlock-provider-jdbc-template</artifactId>
             <version>6.9.0</version>
         </dependency>
-        <dependency>
-            <groupId>io.micrometer</groupId>
-            <artifactId>micrometer-registry-prometheus</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -148,6 +158,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <image>
+                        <name>${dockerImageName}</name>
+                    </image>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
